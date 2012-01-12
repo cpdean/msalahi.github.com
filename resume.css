@@ -10,7 +10,40 @@ div.container{
 	background: -webkit-gradient(linear, left top, left bottom, from(#DACCFF), to(#F2EDFF)); /* for webkit browsers */
 	background: -moz-linear-gradient(top, #DACCFF,#F2EDFF);/* for firefox 3.6+ */ 
 	
-	width: 850px;
-	height:1100px;
+	width: 750px;
+	height:1020px;
+	padding:50px;
+	padding-top:30px;
+	margin:0px auto;
+
+	font-family: "Baskerville";
+	font-size:72px;
+}
+
+div.head{
+	width:100%;
+	border-bottom-style: solid;
+	border-bottom-color: #A09BAB;
+	margin: 0px auto;
+}
+
+p.name{
+	font-size:60px;
+	margin: 0px auto;
+
+}
+
+p.desc{
+	font-size:36px;
+	color:#363636;
+	font-style:oblique;
+	margin-left:0px;
+	margin: 0px auto;
+}
+
+p.contactInfo{
+	font-size:24px;
+	color:#363636;
+	margin-right:0px;
 	margin:0px auto;
 }
