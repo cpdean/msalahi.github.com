@@ -8,6 +8,23 @@
 
 div.container
 {
-	min-width=610px;
+	width:100%;
 	border: 5px solid #ffffff;
+	overflow:auto;
+	min-width:615px;
+}
+
+div.left
+{
+	border-color:white; 
+	border-style:dashed; 
+	width:300px;
+	float:left;
+}
+div.right
+{
+	border-color:white; 
+	border-style:dashed; 
+	width:300px;
+	float:right;
 }
