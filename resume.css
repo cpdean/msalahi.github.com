@@ -1,0 +1,7 @@
+div.container{
+	box-shadow: 3px 3px 5px 6px #9286B0;
+	background: -moz-linear-gradient(270deg,#DACCFF,#F2EDFF);
+	width: 850px;
+	height:1100px;
+	margin:0px auto;
+}
