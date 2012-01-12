@@ -1,5 +1,11 @@
+body.dark{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#121212', endColorstr='#363636', GradientType=1); /* for IE */
+	background: -webkit-gradient(linear, left top, right top, from(#121212), to(#363636)); /* for webkit browsers */
+	background: -moz-linear-gradient(right, #121212,#363636);/* for firefox 3.6+ */
+} 
+
 div.container{
-	box-shadow: 3px 3px 5px 6px #9286B0;
+	box-shadow: 3px 3px 5px 6px #121212;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DACCFF', endColorstr='#F2EDFF'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#DACCFF), to(#F2EDFF)); /* for webkit browsers */
 	background: -moz-linear-gradient(top, #DACCFF,#F2EDFF);/* for firefox 3.6+ */ 
