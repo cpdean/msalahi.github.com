@@ -12,6 +12,7 @@ div.container
 	border: 5px solid #ffffff;
 	overflow:auto;
 	min-width:615px;
+	padding:10px;
 }
 
 div.left
