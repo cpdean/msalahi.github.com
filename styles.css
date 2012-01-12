@@ -8,7 +8,7 @@
 
 div.container
 {
-	width:100%;
+	width:100% - 5px;
 	border: 5px solid #ffffff;
 	overflow:auto;
 	min-width:615px;
