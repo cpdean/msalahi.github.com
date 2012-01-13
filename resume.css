@@ -20,6 +20,7 @@ div.container{
 	font-size:72px;
 }
 
+
 div.head{
 	width:100%;
 	float:right;
@@ -28,13 +29,13 @@ div.head{
 	margin: 0px auto;
 }
 
-p.name{
+div.name{
 	font-size:60px;
 	margin: 0px auto;
-
+	margin: 0px auto;
 }
 
-p.desc{
+div.desc{
 	font-size:36px;
 	color:#363636;
 	font-style:oblique;
@@ -48,11 +49,20 @@ div.nameAndDesc{
 	text-align:left;
 	margin: 0px auto;
 }
+
+div.urlBox{
+	margin-top:10px;
+	float:right;
+	padding:8px;
+	width:200px;
+	background:#A09BAB;
+}
 div.contactInfo{
+	font-size:24px;
 	margin: 0px auto;
-	width:40%
+	margin-bottom:0px;
+	width:40%;
 	text-align:right;
 	float:right;
 }
 
-p.contact{font-size:36px;}
