@@ -23,7 +23,6 @@ div.container{
 
 div.head{
 	width:100%;
-	float:right;
 	border-bottom-style: solid;
 	border-bottom-color: #A09BAB;
 	margin: 0px auto;
@@ -32,7 +31,6 @@ div.head{
 div.name{
 	font-size:60px;
 	margin: 0px auto;
-	margin: 0px auto;
 }
 
 div.desc{
@@ -40,19 +38,17 @@ div.desc{
 	color:#363636;
 	font-style:oblique;
 	margin-left:0px;
-	margin: 0px auto;
+	display: inline-block;
 }
 
 div.nameAndDesc{
-	width:60%;
-	float:left;
+	display: inline-block;
 	text-align:left;
-	margin: 0px auto;
+	margin-left: 0px;
 }
 
 div.urlBox{
 	margin-top:10px;
-	float:right;
 	padding:8px;
 	width:200px;
 	background:#A09BAB;
@@ -63,6 +59,8 @@ div.contactInfo{
 	margin-bottom:0px;
 	width:40%;
 	text-align:right;
-	float:right;
 }
 
+div.border{
+	border: 2px solid black;
+}	
