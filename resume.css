@@ -37,7 +37,6 @@ div.desc{
 	font-size:36px;
 	color:#363636;
 	font-style:oblique;
-	margin-left:0px;
 	display: inline-block;
 }
 
@@ -48,6 +47,7 @@ div.nameAndDesc{
 }
 
 div.urlBox{
+	margin-right:0px;
 	margin-top:10px;
 	padding:8px;
 	width:200px;
@@ -55,8 +55,8 @@ div.urlBox{
 }
 div.contactInfo{
 	font-size:24px;
-	margin: 0px auto;
 	margin-bottom:0px;
+	margin-right:0px;
 	width:40%;
 	text-align:right;
 }
