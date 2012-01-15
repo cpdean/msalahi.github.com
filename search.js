@@ -15,7 +15,7 @@ function initialize(){
 	addWord(dict[''],'crap');
 	addWord(dict[''],'cap');
 	addWord(dict[''],'dracula');
-	printTree(dict,'','');
+	printTree(dict[''],'','');
 }
 
 
@@ -26,9 +26,6 @@ function getRoot(tree){
 }
 	 
 function addWord (children,word){
-	console.log(children);
-	console.log(word);
-	console.log("---");	
 
 	if(word.length===1){
 		console.log("We're in here now.");
@@ -49,22 +46,16 @@ function addWord (children,word){
 		}
 		addWord(children[word[0]],word.substring(1,word.length));
 	}
-	console.log("TEST");
-	console.log(getRoot(children));
-	console.log("TEST DONE");
 
 }
 
-function printTree(tree,wordSegment,indent){
-	var root = getRoot(tree);
-	var children = tree[root];
-	wordSegment=wordSegment.concat(root);
+function printTree(children,wordSegment,indent){
 	console.log(indent,wordSegment);
 	for(child in children){
 		if(child==0){
-			console.log(indent.concat('    ').concat(wordSegment));
+			console.log(indent.concat('    '),wordSegment,"(word)");
 		}else{
-			printTree(children, wordSegment,indent.concat('    '));
+			printTree(children[child], wordSegment.concat(child),indent.concat('    '));
 		}
 	}
 }
