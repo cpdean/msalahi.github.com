@@ -30,9 +30,11 @@ div.head{
 div.name{
 	font-size:60px;
 	margin: 0px auto;
+	padding:0px;
 }
 
 div.desc{
+	padding:0px;
 	font-size:36px;
 	color:#363636;
 	font-style:oblique;
