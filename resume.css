@@ -29,14 +29,16 @@ div.head{
 
 div.name{
 	font-size:60px;
+	line-height:90%;
 	margin: 0px auto;
 	padding:0px;
 }
 
 div.desc{
+	line-height:90%;
 	padding:0px;
 	font-size:36px;
-	color:#363636;
+	color:#595959;
 	font-style:oblique;
 }
 
@@ -49,16 +51,16 @@ div.nameAndDesc{
 
 div.urlBox{
 	text-align:center;
-	padding:8px;
+	padding:5px;
 	background:#A09BAB;
-	margin-left:20%;
+	margin-left:30%;
 }
 div.contactInfo{
 	display: inline-block;
 	font-size:24px;
 	margin-bottom:0px;
 	margin-right:0px;
-	width:40%;
+	width:43%;
 	text-align:right;
 }
 
