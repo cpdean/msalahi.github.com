@@ -8,6 +8,6 @@ function helloWorld(message){
 
 function initialize(){
 	var msg = "GYOHHH";
-	var thing = helloWorld(msg);
+	var thing = new helloWorld(msg);
 	thing.doIt();
 }
