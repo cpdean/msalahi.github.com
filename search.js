@@ -11,12 +11,11 @@ function helloWorld(messages){
 function initialize(){
 	dict = new Array();
 	dict[''] = new Array();
-	addWord(dict,'a');
-	addWord(dict,'m');
-	addWord(dict,'t');
-	printTree(dict,'');
-	console.log(dict);
-	console.log(dict['']);
+	addWord(dict[''],'cat');
+	addWord(dict[''],'crap');
+	addWord(dict[''],'cap');
+	addWord(dict[''],'dracula');
+	printTree(dict,'','');
 }
 
 
@@ -26,24 +25,21 @@ function getRoot(tree){
 	}
 }
 	 
-function addWord (tree,word){
-	console.log(tree);
-	var root = getRoot(tree);
-	var children = tree[root];
-	console.log(root);
+function addWord (children,word){
 	console.log(children);
+	console.log(word);
 	console.log("---");	
-	if(children===undefined){
-		children = new Array();
-	}
 
 	if(word.length===1){
+		console.log("We're in here now.");
 		if(word in children){
+			console.log("word in children");
 			if(!('' in children[word])){
-				children[word].splice(0,0,'');
+				children.push('');
 			}
 		}
 		else{
+			console.log("word not in children");
 			children[word] = new Array('');
 		}
 	}
@@ -53,14 +49,22 @@ function addWord (tree,word){
 		}
 		addWord(children[word[0]],word.substring(1,word.length));
 	}
+	console.log("TEST");
+	console.log(getRoot(children));
+	console.log("TEST DONE");
+
 }
 
-function printTree(tree,indent){
-	root = tree[0];
-	console.log(indent.concat(root));
-	for(child in tree[root]){
-		if(child!==''){
-			printTree(child, indent.concat('    '));
+function printTree(tree,wordSegment,indent){
+	var root = getRoot(tree);
+	var children = tree[root];
+	wordSegment=wordSegment.concat(root);
+	console.log(indent,wordSegment);
+	for(child in children){
+		if(child==0){
+			console.log(indent.concat('    ').concat(wordSegment));
+		}else{
+			printTree(children, wordSegment,indent.concat('    '));
 		}
 	}
 }
