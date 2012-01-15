@@ -9,12 +9,12 @@ form{
 	
 	margin-top:30px;
 	width:640px;
-	padding-top:190px;
-	padding-bottom:190px;
+	height:480px;
 	color:#333A8A;
 	font-size:48px;
 }
-input{
+input{	
+	margin-top:200px;
 	font-size:36px;
 	width: 450px;
 	color:#666;
