@@ -25,7 +25,6 @@ div.head{
 	width:100%;
 	border-bottom-style: solid;
 	border-bottom-color: #A09BAB;
-	margin: 0px auto;
 }
 
 div.name{
@@ -37,23 +36,23 @@ div.desc{
 	font-size:36px;
 	color:#363636;
 	font-style:oblique;
-	display: inline-block;
 }
 
 div.nameAndDesc{
+	height:100%;
 	display: inline-block;
 	text-align:left;
-	margin-left: 0px;
+	padding:0px;
 }
 
 div.urlBox{
-	margin-right:0px;
-	margin-top:10px;
+	text-align:center;
 	padding:8px;
-	width:200px;
 	background:#A09BAB;
+	margin-left:20%;
 }
 div.contactInfo{
+	display: inline-block;
 	font-size:24px;
 	margin-bottom:0px;
 	margin-right:0px;
