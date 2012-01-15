@@ -23,10 +23,16 @@ input{
 div.autocompleteBox{
 	background-color:white;
 	border: 1px solid #777;
-	color:#777;
+	color:#666;
 	width:450px;
 	text-align:left;
 	
+}
+
+li.selected{
+	
+	background-color:#F2ED00;
+	font-color:white;
 }
 
 ul{
