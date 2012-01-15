@@ -16,9 +16,22 @@ form{
 }
 input{
 	font-size:36px;
+	width: 450px;
 	color:#666;
 }
 
+div.autocompleteBox{
+	background-color:white;
+	border: 1px solid #777;
+	color:#777;
+	width:450px;
+	text-align:left;
+	
+}
+
+ul{
+	list-style-type:none;
+}
 body{
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#121212', endColorstr='#363636', GradientType=1); /* for IE */
 	background: -webkit-gradient(linear, left top, right top, from(#121212), to(#363636)); /* for webkit browsers */
