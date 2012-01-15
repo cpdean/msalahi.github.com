@@ -13,9 +13,9 @@ div.container{
 	width: 750px;
 	height:1020px;
 	padding:50px;
-	padding-top:30px;
 	margin:0px auto;
-
+	margin-top:30px;
+	margin-bottom:30px;
 	font-family: "Baskerville";
 	font-size:72px;
 }
@@ -49,18 +49,19 @@ div.nameAndDesc{
 	padding:0px;
 }
 
-div.urlBox{
+a{
 	text-align:center;
 	padding:5px;
+	padding-left:8px;
+	padding-right:8px;
 	background:#A09BAB;
-	margin-left:30%;
+	color:white;
 }
 div.contactInfo{
 	display: inline-block;
 	font-size:24px;
 	margin-bottom:0px;
-	margin-right:0px;
-	width:43%;
+	width:40%;
 	text-align:right;
 }
 

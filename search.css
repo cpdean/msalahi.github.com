@@ -1,0 +1,26 @@
+form{
+	box-shadow: 3px 3px 5px 6px #121212;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DACCFF', endColorstr='#F2EDFF'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#DACCFF), to(#F2EDFF)); /* for webkit browsers */
+	background: -moz-linear-gradient(top, #DACCFF,#F2EDFF);/* for firefox 3.6+ */ 
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	
+	margin-top:30px;
+	width:640px;
+	padding-top:190px;
+	padding-bottom:190px;
+	color:#333A8A;
+	font-size:48px;
+}
+input{
+	font-size:36px;
+	color:#666;
+}
+
+body{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#121212', endColorstr='#363636', GradientType=1); /* for IE */
+	background: -webkit-gradient(linear, left top, right top, from(#121212), to(#363636)); /* for webkit browsers */
+	background: -moz-linear-gradient(right, #121212,#363636);/* for firefox 3.6+ */
+} 
