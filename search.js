@@ -90,7 +90,7 @@ function autocomplete(){
 	if(searchString!==''){
 		console.log(searchString);
 		var results = trie.search(searchString);
-		$("ul-selector li").remove();
+		$("ul li").remove();
 		if(results){
 			console.log("Found ",results.length,"results");
 			for(var i=0;i<results.length;i++){
