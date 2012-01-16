@@ -19,7 +19,7 @@ function Trie(){
 	}	
 	this.search = function (word){
 		//Returns array of all words starting with search string.
-		var results = searchHelper(this.dict[''],word);
+		var results = searchHelper(this.dict[''],word,'');
 		return results;
 	}
 	function displayHelper(children,wordSegment,indent){
@@ -55,9 +55,7 @@ function Trie(){
 
 	}
 	
-	function searchHelper(children,searchString){
-		displayHelper(children,'','');
-		console.log(searchString);
+	function searchHelper(children,searchString,wordSegment){
 		if(!(searchString[0] in children)){
 			return null;
 		}
@@ -65,12 +63,12 @@ function Trie(){
 		else{
 			if(searchString.length == 1){
 				var leaves = new Array();
-				traverse(children[searchString],'',leaves);
+				traverse(children[searchString],wordSegment.concat(searchString),leaves);
 				return leaves;
 			}
 			
 			else{
-				return(searchHelper(children[searchString[0]],searchString.substring(1,searchString.length)));
+				return searchHelper(children[searchString[0]],searchString.substring(1,searchString.length),wordSegment.concat(searchString[0]));
 			}
 		}
 	}
@@ -79,7 +77,7 @@ function Trie(){
 	function traverse(children,wordSegment,leaves){
 		for(child in children){
 			if(child==0){
-				leaves.push(leaves);
+				leaves.push(wordSegment);
 			}else{
 				traverse(children[child], wordSegment.concat(child),leaves);
 			}
@@ -98,5 +96,7 @@ function initialize(){
 	dict.addWord('dracula');
 	//dict.display();
 	console.log(dict.search('ca'));
+	console.log(dict.search('c'));
+	console.log(dict.search('z'));
 }
 
