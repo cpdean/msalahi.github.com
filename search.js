@@ -2,24 +2,23 @@ function Trie(){
 
 	/*Underlying JS Array Structure*/
 	this.dict = new Array();
-	this.dict['']=new Array();
 
 	/*Friendly Public functions*/
 	
 
 	this.addWord = function(word){
 		//Adds word to the trie by calling helper function.
-		addWordHelper(this.dict[''],word);
+		addWordHelper(this.dict,word);
 	}
 
 	this.display = function(){
 		//Displays the trie in console for debugging purposes.
 		console.log("***Tree***");
-		displayHelper(this.dict[''],'','');
+		displayHelper(this.dict,'','');
 	}	
 	this.search = function (word){
 		//Returns array of all words starting with search string.
-		var results = searchHelper(this.dict[''],word,'');
+		var results = searchHelper(this.dict,word,'');
 		return results;
 	}
 	function displayHelper(children,wordSegment,indent){
@@ -83,12 +82,12 @@ function Trie(){
 			}
 		}
 	}
-
-		
-
 }	
 
+
+
 function initialize(){
+	$(document).ready(function(){alert('sup bro');});
 	var dict = new Trie();
 	dict.addWord('cat');
 	dict.addWord('crap');
