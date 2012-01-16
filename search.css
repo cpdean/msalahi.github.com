@@ -13,7 +13,7 @@ form{
 	color:#333A8A;
 	font-size:48px;
 }
-input{	
+input.searchTextArea{	
 	margin-top:200px;
 	font-size:36px;
 	width: 450px;
@@ -21,7 +21,7 @@ input{
 }
 
 div.autocompleteBox{
-	visibility:hidden;
+	display:none;
 	background-color:white;
 	border: 1px solid #777;
 	color:#666;

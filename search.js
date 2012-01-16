@@ -85,17 +85,41 @@ function Trie(){
 }	
 
 
-
+function autocomplete(){
+	var searchString = $(this).val();
+	if(searchString!==''){
+		console.log(searchString);
+		var results = trie.search(searchString);
+		$("ul-selector li").remove();
+		if(results){
+			console.log("Found ",results.length,"results");
+			for(var i=0;i<results.length;i++){
+				console.log("Appending -- ",results[i]);
+				$("#content ul").append("<li>"+results[i]+"</li>");
+			}
+			$("li").first().css('class','selected');
+		}
+		else{
+			console.log("No results to display.");
+			$("#content ul").append("No Results.");
+		}
+		$('autocompleteBox').show();
+	}else{
+		console.log("No search string.");
+		$('autocompleteBox').hide();
+	}
+	
+}
 function initialize(){
-	$(document).ready(function(){alert('sup bro');});
-	var dict = new Trie();
-	dict.addWord('cat');
-	dict.addWord('crap');
-	dict.addWord('cap');
-	dict.addWord('dracula');
-	//dict.display();
-	console.log(dict.search('ca'));
-	console.log(dict.search('c'));
-	console.log(dict.search('z'));
+	$('.searchTextArea').keyup(autocomplete);
+	trie = new Trie();
+	trie.addWord('cat');
+	trie.addWord('crap');
+	trie.addWord('cap');
+	trie.addWord('dracula');
+	//trie.display();
+	console.log(trie.search('ca'));
+	console.log(trie.search('c'));
+	console.log(trie.search('z'));
 }
 
