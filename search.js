@@ -101,7 +101,7 @@ function autocomplete(){
 		}
 		else{
 			console.log("No results to display.");
-			$("ul").append("No Results.");
+			$("ul").append("<li>No Results.</li>");
 		}
 		$("autocompleteBox").show();
 	}else{
