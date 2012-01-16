@@ -87,6 +87,7 @@ function Trie(){
 
 function autocomplete(){
 	var searchString = $(this).val();
+	
 	if(searchString!==''){
 		console.log(searchString);
 		var results = trie.search(searchString);
@@ -103,10 +104,10 @@ function autocomplete(){
 			console.log("No results to display.");
 			$("ul").append("<li>No Results.</li>");
 		}
-		$(".autocompleteBox").show();
+		document.getElementsByClassName("autocompleteBox")[0].style.display = "block";
 	}else{
 		console.log("No search string.");
-		$(".autocompleteBox").hide();
+		document.getElementsByClassName("autocompleteBox")[0].style.display = "none";
 	}
 	
 }

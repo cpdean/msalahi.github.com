@@ -9,12 +9,12 @@ form{
 	
 	margin-top:30px;
 	width:640px;
-	height:480px;
+	height:300px;
 	color:#333A8A;
 	font-size:48px;
 }
 input.searchTextArea{	
-	margin-top:200px;
+	margin-top:100px;
 	font-size:36px;
 	width: 450px;
 	color:#666;
