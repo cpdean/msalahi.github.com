@@ -16,12 +16,12 @@ function Trie(){
 		//Displays the trie in console for debugging purposes.
 		console.log("***Tree***");
 		displayHelper(this.dict[''],'','');
-	}/*	
+	}	
 	this.search = function (word){
 		//Returns array of all words starting with search string.
-		var results = this.searchHelper(this.dict['']);
+		var results = searchHelper(this.dict[''],word);
 		return results;
-	}*/
+	}
 	function displayHelper(children,wordSegment,indent){
 		//Recursively prints out the trie.
 		console.log(indent,wordSegment);
@@ -54,34 +54,37 @@ function Trie(){
 		}
 
 	}
-	/*
+	
 	function searchHelper(children,searchString){
-
+		displayHelper(children,'','');
+		console.log(searchString);
 		if(!(searchString[0] in children)){
 			return null;
 		}
 
 		else{
 			if(searchString.length == 1){
-				return traverse(children[searchString]);
+				var leaves = new Array();
+				traverse(children[searchString],'',leaves);
+				return leaves;
 			}
 			
 			else{
-				return(searchHelper(children[searchString],searchString.substring(1,searchString.length)));
+				return(searchHelper(children[searchString[0]],searchString.substring(1,searchString.length)));
 			}
 		}
 	}
 			
 
-	function traverse(children,wordSegment){
+	function traverse(children,wordSegment,leaves){
 		for(child in children){
 			if(child==0){
-				yield wordSegment;
+				leaves.push(leaves);
 			}else{
-				traverse(children[child], wordSegment.concat(child));
+				traverse(children[child], wordSegment.concat(child),leaves);
 			}
 		}
-	}*/
+	}
 
 		
 
@@ -93,6 +96,7 @@ function initialize(){
 	dict.addWord('crap');
 	dict.addWord('cap');
 	dict.addWord('dracula');
-	dict.display();
+	//dict.display();
+	console.log(dict.search('ca'));
 }
 
