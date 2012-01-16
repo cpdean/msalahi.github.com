@@ -95,18 +95,18 @@ function autocomplete(){
 			console.log("Found ",results.length,"results");
 			for(var i=0;i<results.length;i++){
 				console.log("Appending -- ",results[i]);
-				$("#content ul").append("<li>"+results[i]+"</li>");
+				$("ul").append("<li>"+results[i]+"</li>");
 			}
 			$("li").first().css('class','selected');
 		}
 		else{
 			console.log("No results to display.");
-			$("#content ul").append("No Results.");
+			$("ul").append("No Results.");
 		}
-		$('autocompleteBox').show();
+		$("autocompleteBox").show();
 	}else{
 		console.log("No search string.");
-		$('autocompleteBox').hide();
+		$("autocompleteBox").hide();
 	}
 	
 }
