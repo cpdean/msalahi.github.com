@@ -97,16 +97,16 @@ function autocomplete(){
 				console.log("Appending -- ",results[i]);
 				$("ul").append("<li>"+results[i]+"</li>");
 			}
-			$("li").first().css('class','selected');
+			$("li").first().addClass('selected');
 		}
 		else{
 			console.log("No results to display.");
 			$("ul").append("<li>No Results.</li>");
 		}
-		$("autocompleteBox").show();
+		$(".autocompleteBox").show();
 	}else{
 		console.log("No search string.");
-		$("autocompleteBox").hide();
+		$(".autocompleteBox").hide();
 	}
 	
 }
