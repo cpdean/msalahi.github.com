@@ -87,10 +87,51 @@ function Trie(){
 	}
 }	
 
+function handleSearchEvent(eventObject){
+	if(eventObject.keyCode===38 || eventObject.keyCode===40){
+		navigateSuggestions(eventObject.keyCode);
+	}else{
+		var searchString = $(this).val();
+		autocomplete(searchString);
+	}
+}
 
-function autocomplete(){
-	var searchString = $(this).val();
-	
+function navigateSuggestions(keyCode){
+
+	if ($("li[class='selected']").length !== 0){
+		var selected = $("li[class='selected']");
+		var next = selected.next();
+		var prev = selected.prev();
+
+		if(keyCode == 40){
+			if(next.length!==0){
+				selected.toggleClass();
+				next.addClass('selected');
+			}
+		}else if(keyCode==38){
+			if(prev.length!==0){
+				selected.toggleClass();
+				prev.addClass('selected');
+			}
+		}
+	}
+
+
+}
+
+function handleSubmit(eventObject){
+	eventObject.preventDefault();
+	if($("li[class='selected']").length !== 0){
+		eventObject.preventDefault();
+		var selected = $("li[class='selected']");
+		console.log(selected);
+		console.log(selected.text());
+		$("input").setValue(selected.text());
+		$(".autocompleteBox").hide();
+	}
+}
+		
+function autocomplete(searchString){
 	if(searchString.length!==0){
 		console.log(searchString);
 		var results = trie.search(searchString);
@@ -98,16 +139,14 @@ function autocomplete(){
 		if(results){
 			console.log("Found ",results.length,"results");
 			for(var i=0;i<results.length;i++){
-				console.log("Appending -- ",results[i]);
 				$("ul").append("<li>"+results[i]+"</li>");
 			}
 			$("li").first().addClass('selected');
+			$(".autocompleteBox").show();
+		}else{
+			console.log("No results found.");
+			$(".autocompleteBox").hide();
 		}
-		else{
-			console.log("No results to display.");
-			$("ul").append("<li>No Results.</li>");
-		}
-		$(".autocompleteBox").show();
 	}else{
 		console.log("No search string.");
 		$(".autocompleteBox").hide();
@@ -115,11 +154,14 @@ function autocomplete(){
 	
 }
 
+
+
 	
 function initialize(){
-	var dictionary = genDict();
-	trie = genDict(trie);
-	$('.searchTextArea').keyup(autocomplete);
+	trie = genDict();
+	$('.searchTextArea').keyup(handleSearchEvent);
+	$('.searchTextArea').submit(function(){return false;});
+	
 }
 
 function genDict(){
