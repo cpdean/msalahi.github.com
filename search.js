@@ -124,12 +124,15 @@ function handleKeydown(eventObject){
 	var words = $("input").val().split(" ");
 	var searchString = words.pop();
 	var prevWords = words.join(" ");
-
+	var bullet = "•";
 	if(eventObject.keyCode===13){
 		if($("li[class='selected']").length !== 0){
 			eventObject.preventDefault();
 			var selected = $("li[class='selected']");
-			$("input").val(prevWords+" "+selected.text()+" ");
+			if(prevWords.length>1){
+				prevWords+= " ";
+			}
+			$("input").val(prevWords+bullet+selected.text()+" ");
 			$(".autocompleteBox").hide();
 			return false;
 		}
@@ -142,11 +145,11 @@ function autocomplete(){
 	var words = $("input").val().split(" ");
 	var searchString = words.pop();
 	var prevWords = words.join(" ");
-
+	$("ul li").remove();
+	
 	if(searchString.length!==0){
 		console.log(searchString);
 		var results = trie.search(searchString);
-		$("ul li").remove();
 		if(results){
 			console.log("Found ",results.length,"results");
 			for(var i=0;i<results.length;i++){
