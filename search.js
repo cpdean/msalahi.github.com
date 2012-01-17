@@ -74,16 +74,14 @@ function Trie(){
 			
 
 	function traverse(children,wordSegment,leaves){
-		if(children.length===5){
-			return;
-		}
-		else{
-			for(child in children){
-				if(child==0){
-					leaves.push(wordSegment);
-				}else{
-					traverse(children[child], wordSegment.concat(child),leaves);
-				}
+		for(child in children){
+			if(leaves.length===5){
+				return;
+			}
+			else if(child==0){
+				leaves.push(wordSegment);
+			}else{
+				traverse(children[child], wordSegment.concat(child),leaves);
 			}
 		}
 	}
@@ -93,7 +91,7 @@ function Trie(){
 function autocomplete(){
 	var searchString = $(this).val();
 	
-	if(searchString.length>2){
+	if(searchString.length!==0){
 		console.log(searchString);
 		var results = trie.search(searchString);
 		$("ul li").remove();
