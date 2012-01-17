@@ -91,8 +91,7 @@ function handleSearchEvent(eventObject){
 	if(eventObject.keyCode===38 || eventObject.keyCode===40){
 		navigateSuggestions(eventObject.keyCode);
 	}else{
-		var searchString = $(this).val();
-		autocomplete(searchString);
+		autocomplete();
 	}
 }
 
@@ -119,19 +118,31 @@ function navigateSuggestions(keyCode){
 
 }
 
-function handleSubmit(eventObject){
-	eventObject.preventDefault();
-	if($("li[class='selected']").length !== 0){
-		eventObject.preventDefault();
-		var selected = $("li[class='selected']");
-		console.log(selected);
-		console.log(selected.text());
-		$("input").setValue(selected.text());
-		$(".autocompleteBox").hide();
-	}
-}
 		
-function autocomplete(searchString){
+function handleKeydown(eventObject){
+
+	var words = $("input").val().split(" ");
+	var searchString = words.pop();
+	var prevWords = words.join(" ");
+
+	if(eventObject.keyCode===13){
+		if($("li[class='selected']").length !== 0){
+			eventObject.preventDefault();
+			var selected = $("li[class='selected']");
+			$("input").val(prevWords+" "+selected.text()+" ");
+			$(".autocompleteBox").hide();
+			return false;
+		}
+	}
+
+}
+
+function autocomplete(){
+
+	var words = $("input").val().split(" ");
+	var searchString = words.pop();
+	var prevWords = words.join(" ");
+
 	if(searchString.length!==0){
 		console.log(searchString);
 		var results = trie.search(searchString);
@@ -160,8 +171,8 @@ function autocomplete(searchString){
 function initialize(){
 	trie = genDict();
 	$('.searchTextArea').keyup(handleSearchEvent);
-	$('.searchTextArea').submit(function(){return false;});
-	
+	$('.searchTextArea').keydown(handleKeydown);
+		
 }
 
 function genDict(){
