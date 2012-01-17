@@ -104,23 +104,39 @@ function autocomplete(){
 			console.log("No results to display.");
 			$("ul").append("<li>No Results.</li>");
 		}
-		document.getElementsByClassName("autocompleteBox")[0].style.display = "block";
+		$(".autocompleteBox").show();
 	}else{
 		console.log("No search string.");
-		document.getElementsByClassName("autocompleteBox")[0].style.display = "none";
+		$(".autocompleteBox").hide();
 	}
 	
 }
+
+	
 function initialize(){
-	$('.searchTextArea').keyup(autocomplete);
+	var dictionary = genDict();
 	trie = new Trie();
-	trie.addWord('cat');
-	trie.addWord('crap');
-	trie.addWord('cap');
-	trie.addWord('dracula');
-	//trie.display();
-	console.log(trie.search('ca'));
-	console.log(trie.search('c'));
-	console.log(trie.search('z'));
+	for(var i=0;i<genDict;i++){
+		console.log(dictionary[i]);
+		trie.addWord(dictionary[i]);
+	}
+	$('.searchTextArea').keyup(autocomplete);
 }
 
+function genDict(){
+	var dict = new Array();
+	dict.push("aardvark");
+	dict.push("aardwolf");
+	dict.push("aaron");
+	dict.push("aback");
+	dict.push("abacus");
+	dict.push("abaft");
+	dict.push("abalone");
+	dict.push("abandon");
+	dict.push("abandoned");
+	dict.push("abandonment");
+	dict.push("abandons");
+	dict.push("abase");
+	dict.push("abased");
+	return dict;
+}
