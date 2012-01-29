@@ -28,7 +28,9 @@ function Trie(){
 			if(child==0){
 				console.log(indent.concat('    '),wordSegment,"(word)");
 			}else{
-				displayHelper(children[child], wordSegment.concat(child),indent.concat('    '));
+				displayHelper(children[child], 
+					      wordSegment.concat(child),
+					      indent.concat('    '));
 			}
 		}
 	}
@@ -62,12 +64,16 @@ function Trie(){
 		else{
 			if(searchString.length == 1){
 				var leaves = new Array();
-				traverse(children[searchString],wordSegment.concat(searchString),leaves);
+				traverse(children[searchString],
+					 wordSegment.concat(searchString),
+					 leaves);
 				return leaves;
 			}
 			
 			else{
-				return searchHelper(children[searchString[0]],searchString.substring(1,searchString.length),wordSegment.concat(searchString[0]));
+				return searchHelper(children[searchString[0]],
+						    searchString.substring(1,searchString.length),
+						    wordSegment.concat(searchString[0]));
 			}
 		}
 	}
@@ -87,6 +93,15 @@ function Trie(){
 	}
 }	
 
+
+function autoSuggester(textElement){
+	
+	//HTML Elements Binded to autoSuggester class.
+	this.textField = textElement;
+	
+}
+			
+	
 function handleSearchEvent(eventObject){
 	if(eventObject.keyCode===38 || eventObject.keyCode===40){
 		navigateSuggestions(eventObject.keyCode);
@@ -170,8 +185,10 @@ function autocomplete(){
 
 
 
-	
-function initialize(){
+function initAutoSuggest(textElement){
+	a = autoSuggester(textElement);
+}
+function initialize(){	
 	trie = genDict();
 	$('.searchTextArea').keyup(handleSearchEvent);
 	$('.searchTextArea').keydown(handleKeydown);
@@ -301,133 +318,6 @@ function genDict(){
 	trie.addWord("abort");
 	trie.addWord("aborted");
 	trie.addWord("aborting");
-	trie.addWord("abortion");
-	trie.addWord("abortionist");
-	trie.addWord("abortionists");
-	trie.addWord("abortions");
-	trie.addWord("abortive");
-	trie.addWord("aborts");
-	trie.addWord("abound");
-	trie.addWord("abounded");
-	trie.addWord("abounding");
-	trie.addWord("abounds");
-	trie.addWord("about");
-	trie.addWord("above");
-	trie.addWord("abraded");
-	trie.addWord("abraham");
-	trie.addWord("abrasion");
-	trie.addWord("abrasions");
-	trie.addWord("abrasive");
-	trie.addWord("abrasively");
-	trie.addWord("abrasiveness");
-	trie.addWord("abrasives");
-	trie.addWord("abreast");
-	trie.addWord("abridge");
-	trie.addWord("abridged");
-	trie.addWord("abridgement");
-	trie.addWord("abridging");
-	trie.addWord("abroad");
-	trie.addWord("abrogate");
-	trie.addWord("abrogated");
-	trie.addWord("abrogating");
-	trie.addWord("abrogation");
-	trie.addWord("abrogations");
-	trie.addWord("abrupt");
-	trie.addWord("abruptly");
-	trie.addWord("abruptness");
-	trie.addWord("abscess");
-	trie.addWord("abscesses");
-	trie.addWord("abscissa");
-	trie.addWord("abscissae");
-	trie.addWord("abscissas");
-	trie.addWord("abscond");
-	trie.addWord("absconded");
-	trie.addWord("absconder");
-	trie.addWord("absconding");
-	trie.addWord("absconds");
-	trie.addWord("abseil");
-	trie.addWord("abseiled");
-	trie.addWord("abseiler");
-	trie.addWord("abseiling");
-	trie.addWord("abseils");
-	trie.addWord("absence");
-	trie.addWord("absences");
-	trie.addWord("absent");
-	trie.addWord("absented");
-	trie.addWord("absentee");
-	trie.addWord("absenteeism");
-	trie.addWord("absentees");
-	trie.addWord("absenting");
-	trie.addWord("absently");
-	trie.addWord("absentminded");
-	trie.addWord("absentmindedly");
-	trie.addWord("absentmindedness");
-	trie.addWord("absolute");
-	trie.addWord("absolutely");
-	trie.addWord("absoluteness");
-	trie.addWord("absolutes");
-	trie.addWord("absolution");
-	trie.addWord("absolutism");
-	trie.addWord("absolutist");
-	trie.addWord("absolutists");
-	trie.addWord("absolve");
-	trie.addWord("absolved");
-	trie.addWord("absolves");
-	trie.addWord("absolving");
-	trie.addWord("absorb");
-	trie.addWord("absorbed");
-	trie.addWord("absorbency");
-	trie.addWord("absorbent");
-	trie.addWord("absorber");
-	trie.addWord("absorbers");
-	trie.addWord("absorbing");
-	trie.addWord("absorbingly");
-	trie.addWord("absorbs");
-	trie.addWord("absorption");
-	trie.addWord("absorptions");
-	trie.addWord("absorptive");
-	trie.addWord("absorptivity");
-	trie.addWord("abstain");
-	trie.addWord("abstained");
-	trie.addWord("abstainer");
-	trie.addWord("abstainers");
-	trie.addWord("abstaining");
-	trie.addWord("abstains");
-	trie.addWord("abstemious");
-	trie.addWord("abstemiously");
-	trie.addWord("abstemiousness");
-	trie.addWord("abstention");
-	trie.addWord("abstentions");
-	trie.addWord("abstinence");
-	trie.addWord("abstinent");
-	trie.addWord("abstract");
-	trie.addWord("abstracted");
-	trie.addWord("abstractedly");
-	trie.addWord("abstracting");
-	trie.addWord("abstraction");
-	trie.addWord("abstractions");
-	trie.addWord("abstractly");
-	trie.addWord("abstracts");
-	trie.addWord("abstruse");
-	trie.addWord("abstrusely");
-	trie.addWord("absurd");
-	trie.addWord("absurder");
-	trie.addWord("absurdest");
-	trie.addWord("absurdist");
-	trie.addWord("absurdities");
-	trie.addWord("absurdity");
-	trie.addWord("absurdly");
-	trie.addWord("abundance");
-	trie.addWord("abundances");
-	trie.addWord("abundant");
-	trie.addWord("abundantly");
-	trie.addWord("abuse");
-	trie.addWord("abused");
-	trie.addWord("abuser");
-	trie.addWord("abusers");
-	trie.addWord("abuses");
-	trie.addWord("abusing");
-	trie.addWord("abusive");
 	trie.addWord("abusively");
 	trie.addWord("abusiveness");
 	trie.addWord("abut");
@@ -33059,267 +32949,6 @@ function genDict(){
 	trie.addWord("mouse");
 	trie.addWord("mouselike");
 	trie.addWord("mousetrap");
-	trie.addWord("mousetraps");
-	trie.addWord("mousey");
-	trie.addWord("moussaka");
-	trie.addWord("mousse");
-	trie.addWord("mousses");
-	trie.addWord("moustache");
-	trie.addWord("moustached");
-	trie.addWord("moustaches");
-	trie.addWord("mousy");
-	trie.addWord("mouth");
-	trie.addWord("mouthed");
-	trie.addWord("mouthful");
-	trie.addWord("mouthfuls");
-	trie.addWord("mouthing");
-	trie.addWord("mouthorgan");
-	trie.addWord("mouthparts");
-	trie.addWord("mouthpiece");
-	trie.addWord("mouthpieces");
-	trie.addWord("mouths");
-	trie.addWord("mouthtomouth");
-	trie.addWord("mouthwash");
-	trie.addWord("mouthwatering");
-	trie.addWord("movable");
-	trie.addWord("move");
-	trie.addWord("moveable");
-	trie.addWord("moved");
-	trie.addWord("movement");
-	trie.addWord("movements");
-	trie.addWord("mover");
-	trie.addWord("movers");
-	trie.addWord("moves");
-	trie.addWord("movie");
-	trie.addWord("movies");
-	trie.addWord("moving");
-	trie.addWord("movingly");
-	trie.addWord("mow");
-	trie.addWord("mowed");
-	trie.addWord("mower");
-	trie.addWord("mowers");
-	trie.addWord("mowing");
-	trie.addWord("mown");
-	trie.addWord("mows");
-	trie.addWord("mozart");
-	trie.addWord("mr");
-	trie.addWord("mrs");
-	trie.addWord("ms");
-	trie.addWord("mu");
-	trie.addWord("much");
-	trie.addWord("muchness");
-	trie.addWord("muck");
-	trie.addWord("mucked");
-	trie.addWord("mucking");
-	trie.addWord("mucks");
-	trie.addWord("mucky");
-	trie.addWord("mucosa");
-	trie.addWord("mucous");
-	trie.addWord("mucus");
-	trie.addWord("mud");
-	trie.addWord("muddied");
-	trie.addWord("muddier");
-	trie.addWord("muddies");
-	trie.addWord("muddiest");
-	trie.addWord("muddle");
-	trie.addWord("muddled");
-	trie.addWord("muddles");
-	trie.addWord("muddling");
-	trie.addWord("muddy");
-	trie.addWord("muddying");
-	trie.addWord("mudflats");
-	trie.addWord("mudflow");
-	trie.addWord("mudflows");
-	trie.addWord("mudguard");
-	trie.addWord("mudguards");
-	trie.addWord("mudlarks");
-	trie.addWord("muds");
-	trie.addWord("muesli");
-	trie.addWord("muff");
-	trie.addWord("muffed");
-	trie.addWord("muffin");
-	trie.addWord("muffins");
-	trie.addWord("muffle");
-	trie.addWord("muffled");
-	trie.addWord("muffler");
-	trie.addWord("mufflers");
-	trie.addWord("muffling");
-	trie.addWord("muffs");
-	trie.addWord("mufti");
-	trie.addWord("mug");
-	trie.addWord("mugged");
-	trie.addWord("mugger");
-	trie.addWord("muggers");
-	trie.addWord("muggier");
-	trie.addWord("mugging");
-	trie.addWord("muggings");
-	trie.addWord("muggy");
-	trie.addWord("mugs");
-	trie.addWord("mugshots");
-	trie.addWord("mulberries");
-	trie.addWord("mulberry");
-	trie.addWord("mulch");
-	trie.addWord("mulches");
-	trie.addWord("mulching");
-	trie.addWord("mule");
-	trie.addWord("mules");
-	trie.addWord("mull");
-	trie.addWord("mullah");
-	trie.addWord("mullahs");
-	trie.addWord("mulled");
-	trie.addWord("mullet");
-	trie.addWord("mulling");
-	trie.addWord("mullioned");
-	trie.addWord("mullions");
-	trie.addWord("multichannel");
-	trie.addWord("multicolour");
-	trie.addWord("multicoloured");
-	trie.addWord("multicultural");
-	trie.addWord("multiculturalism");
-	trie.addWord("multidimensional");
-	trie.addWord("multifarious");
-	trie.addWord("multiform");
-	trie.addWord("multifunction");
-	trie.addWord("multifunctional");
-	trie.addWord("multilateral");
-	trie.addWord("multilateralism");
-	trie.addWord("multilayer");
-	trie.addWord("multilevel");
-	trie.addWord("multilingual");
-	trie.addWord("multimedia");
-	trie.addWord("multimeter");
-	trie.addWord("multimillion");
-	trie.addWord("multinational");
-	trie.addWord("multinationals");
-	trie.addWord("multiphase");
-	trie.addWord("multiple");
-	trie.addWord("multiples");
-	trie.addWord("multiplex");
-	trie.addWord("multiplexed");
-	trie.addWord("multiplexer");
-	trie.addWord("multiplexers");
-	trie.addWord("multiplexes");
-	trie.addWord("multiplexing");
-	trie.addWord("multiplexor");
-	trie.addWord("multiplexors");
-	trie.addWord("multiplication");
-	trie.addWord("multiplications");
-	trie.addWord("multiplicative");
-	trie.addWord("multiplicities");
-	trie.addWord("multiplicity");
-	trie.addWord("multiplied");
-	trie.addWord("multiplier");
-	trie.addWord("multipliers");
-	trie.addWord("multiplies");
-	trie.addWord("multiply");
-	trie.addWord("multiplying");
-	trie.addWord("multiprocessing");
-	trie.addWord("multiprocessor");
-	trie.addWord("multiprocessors");
-	trie.addWord("multiprogramming");
-	trie.addWord("multiracial");
-	trie.addWord("multitude");
-	trie.addWord("multitudes");
-	trie.addWord("mum");
-	trie.addWord("mumble");
-	trie.addWord("mumbled");
-	trie.addWord("mumbler");
-	trie.addWord("mumbles");
-	trie.addWord("mumbling");
-	trie.addWord("mumblings");
-	trie.addWord("mumbojumbo");
-	trie.addWord("mummies");
-	trie.addWord("mummification");
-	trie.addWord("mummified");
-	trie.addWord("mummify");
-	trie.addWord("mummy");
-	trie.addWord("mumps");
-	trie.addWord("mums");
-	trie.addWord("munch");
-	trie.addWord("munched");
-	trie.addWord("muncher");
-	trie.addWord("munchers");
-	trie.addWord("munches");
-	trie.addWord("munching");
-	trie.addWord("mundane");
-	trie.addWord("mundanely");
-	trie.addWord("munich");
-	trie.addWord("municipal");
-	trie.addWord("municipalities");
-	trie.addWord("municipality");
-	trie.addWord("munificence");
-	trie.addWord("munificent");
-	trie.addWord("munificently");
-	trie.addWord("munition");
-	trie.addWord("munitions");
-	trie.addWord("muons");
-	trie.addWord("mural");
-	trie.addWord("murals");
-	trie.addWord("murder");
-	trie.addWord("murdered");
-	trie.addWord("murderer");
-	trie.addWord("murderers");
-	trie.addWord("murderess");
-	trie.addWord("murdering");
-	trie.addWord("murderous");
-	trie.addWord("murderously");
-	trie.addWord("murders");
-	trie.addWord("murk");
-	trie.addWord("murkier");
-	trie.addWord("murkiest");
-	trie.addWord("murkiness");
-	trie.addWord("murky");
-	trie.addWord("murmur");
-	trie.addWord("murmured");
-	trie.addWord("murmurer");
-	trie.addWord("murmuring");
-	trie.addWord("murmurings");
-	trie.addWord("murmurs");
-	trie.addWord("murray");
-	trie.addWord("muscadel");
-	trie.addWord("muscat");
-	trie.addWord("muscle");
-	trie.addWord("muscled");
-	trie.addWord("muscles");
-	trie.addWord("muscling");
-	trie.addWord("muscular");
-	trie.addWord("muscularity");
-	trie.addWord("musculature");
-	trie.addWord("musculoskeletal");
-	trie.addWord("muse");
-	trie.addWord("mused");
-	trie.addWord("muses");
-	trie.addWord("museum");
-	trie.addWord("museums");
-	trie.addWord("mush");
-	trie.addWord("mushes");
-	trie.addWord("mushroom");
-	trie.addWord("mushroomed");
-	trie.addWord("mushrooming");
-	trie.addWord("mushrooms");
-	trie.addWord("mushy");
-	trie.addWord("music");
-	trie.addWord("musical");
-	trie.addWord("musicality");
-	trie.addWord("musically");
-	trie.addWord("musicals");
-	trie.addWord("musician");
-	trie.addWord("musicians");
-	trie.addWord("musicianship");
-	trie.addWord("musicologist");
-	trie.addWord("musicologists");
-	trie.addWord("musicology");
-	trie.addWord("musing");
-	trie.addWord("musingly");
-	trie.addWord("musings");
-	trie.addWord("musk");
-	trie.addWord("musket");
-	trie.addWord("musketeer");
-	trie.addWord("musketeers");
-	trie.addWord("muskets");
-	trie.addWord("muskier");
-	trie.addWord("muskiest");
-	trie.addWord("musks");
 	trie.addWord("musky");
 	trie.addWord("muslim");
 	trie.addWord("muslims");

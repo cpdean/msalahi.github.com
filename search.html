@@ -3,22 +3,21 @@
 	<head>
 		<title>Search Test</title>
 			<link rel="stylesheet" type="text/css" href="search.css" />
-			<script type=""application/javascript;version=1.7" src="search.js"></script>
+			<script type= "application/javascript"; version=1.7 src="search.js"></script>
+
 			<script src="jquery-1.7.1.js"></script>
 	</head>
 	<body>
 		<div align="center">
-		<form class="searchBox">
+		<form>
 			Search Test</br>
-			<input class="searchTextArea" autocomplete="off" name="searchTextField"/>
-			<div class="autocompleteBox">
-				<ul list-style-type="none">
-				</ul>
-			</div>
+			<div id="search"/>
 		</form>
 		</div>
 		<script type="text/javascript">
 			initialize();
+			thing = $("input")[0];
+			alert(thing.tagName);
 		</script>
 	</body>
 </html>

@@ -1,4 +1,6 @@
+
 form{
+	align: center;
 	box-shadow: 3px 3px 5px 6px #121212;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DACCFF', endColorstr='#F2EDFF'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#DACCFF), to(#F2EDFF)); /* for webkit browsers */
@@ -12,6 +14,12 @@ form{
 	height:300px;
 	color:#333A8A;
 	font-size:48px;
+}
+
+div#search{
+	background-color: "white";
+	height:1em;
+	width:70%;
 }
 input.searchTextArea{	
 	margin-top:100px;
