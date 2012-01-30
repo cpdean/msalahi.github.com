@@ -94,10 +94,19 @@ function Trie(){
 }	
 
 
-function autoSuggester(textElement){
+function autoSuggester(div){
 	
 	//HTML Elements Binded to autoSuggester class.
-	this.textField = textElement;
+	this.container = $(div);
+	
+	//Initialize Search Text Area
+	this.textField = $(document.createElement('input'));
+	this.textField.attr("type",'text');
+	this.textField.attr("id",'searchTextField');
+	this.textField.attr("name",'searchText');
+	this.container.append(this.textField);
+
+	//Initialize Auto-suggest Box
 	
 }
 			
@@ -185,13 +194,13 @@ function autocomplete(){
 
 
 
-function initAutoSuggest(textElement){
-	a = autoSuggester(textElement);
+function initAutoSuggest(div){
+	a = autoSuggester(div);
 }
 function initialize(){	
 	trie = genDict();
-	$('.searchTextArea').keyup(handleSearchEvent);
-	$('.searchTextArea').keydown(handleKeydown);
+	//$('.searchTextArea').keyup(handleSearchEvent);
+	//$('.searchTextArea').keydown(handleKeydown);
 		
 }
 
