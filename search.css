@@ -17,19 +17,37 @@ form{
 }
 
 div#search{
+	margin-top:50px;
 	background: white;
 	border: 1px solid #ccc;
 	width:70%;
+	font-size:35px;
 }
+
+div.tagContainer{
+	background:blue;
+	display: inline-block;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+label.tagLabel{
+	font-size:36px;
+	font-color:#fff;
+	margin:5px;
+}
+	
+	
 #searchTextField{	
+	display: inline-block;
 	background-color:transparent;
 	outline:none;
+	top:0px;
 	border: none;
 	font-size:36px;
-	width: 98%;
-	height: 98%;
+	margin: 5px;
 	color:#666;
-	margin: 0px auto;
 }
 
 div.autocompleteBox{
