@@ -107,7 +107,7 @@ function autoSuggester(div){
 	this.container.append(this.textField);
 
 	//Initialize Auto-suggest Box
-	
+		
 }
 			
 	

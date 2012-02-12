@@ -3,20 +3,41 @@
 	<head>
 		<title>Search Test</title>
 			<link rel="stylesheet" type="text/css" href="search.css" />
+			<link rel="stylesheet" type="text/css" href="lib/chosen/chosen.css" />
 			<script type= "application/javascript"; version=1.7 src="search.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+			  <script src="lib/chosen/chosen.jquery.js" type="text/javascript"></script>
+			    <script type="text/javascript"> $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({allow_single_deselect:tru<select data-placeholder="Your Favorite Types of Bear" style="width:350px;" multiple class="chzn-select" id="test_me" name="test_me_form" tabindex="8">
+			              <option value=""></option>
+				                <option>American Black Bear</option>
+						          <option>Asiatic Black Bear</option>
+							            <option>Brown Bear</option>
+								              <option>Giant Panda</option>
+									                <option selected>Sloth Bear</option>
+											          <option disabled>Sun Bear</option>
+												            <option selected>Polar Bear</option>
+													              <option disabled>Spectacled Bear</option>
+														              </select>e}); </script>
 
-			<script src="jquery-1.7.1.js"></script>
+			</script>
+
 	</head>
 	<body>
 		<div align="center">
 		<form>
 			Search Test</br>
-			<div id="search">
-				<div class="tagContainer" align="left">
-					<label class="tagLabel">
-						Shirt
-					</label>
-				</div>
+			<div>
+			<select data-placeholder="Your Favorite Types of Bear" style="width:350px;" multiple class="chzn-select" id="test_me" name="test_me_form" tabindex="8">
+			        <option value=""></option>
+				<option>American Black Bear</option>
+				<option>Asiatic Black Bear</option>
+				<option>Brown Bear</option>
+				<option>Giant Panda</option>
+				<option selected>Sloth Bear</option>
+				<option disabled>Sun Bear</option>
+				<option selected>Polar Bear</option>
+				<option disabled>Spectacled Bear</option>
+			</select>
 			</div>
 						
 		</form>
